@@ -1,0 +1,25 @@
+%h1
+	add 
+	%span.subhead events
+
+%p Enter an address for the new event:
+
+= form_tag('/events/place_list', :class =>"add-events") do
+	.field
+		= label_tag :address
+		= text_field_tag :address
+
+	.field
+		= label_tag :city
+		= text_field_tag :city
+
+	.field
+		= label_tag :state
+		= text_field_tag :state, nil, :class => "state"
+
+	.field
+		= label_tag :zip
+		= text_field_tag :zip, nil, :class => "zip"
+
+	%div.hr
+	%div.actions= image_submit_tag "/images/template/enter-address.png", :name =>"commit", :value => "Find Events"

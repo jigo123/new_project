@@ -1,0 +1,118 @@
+%h1
+	edit 
+	%span.subhead profile 
+
+=form_for(@user, :html => { :multipart => true }) do |f|
+	%p
+		Title
+		%br/
+		= f.text_field :title
+
+	%p
+		= f.label :first_name
+		%br/
+		= f.text_field :first_name
+
+	%p
+		= f.label :last_name
+		%br/
+		= f.text_field :last_name
+
+	%p
+		= f.label :email
+		%br/
+		= f.text_field :email
+
+	%p
+		= f.label :photo
+		%br/
+		- if @user.photo_file_name
+			= image_tag @user.photo.url, :width => "100"
+			%br/
+		= f.file_field :photo
+
+	%p
+		= f.label :headline
+		%br/
+		= f.text_field :headline
+
+	%p
+		= f.label :bio
+		%br/
+		= f.text_area :bio
+
+	%p
+		= f.label :phone
+		%br/
+		= f.text_field :phone
+
+	%p
+		= f.label :url
+		%br/
+		= f.text_field :url
+
+	%p
+		Location (city/state)
+		%br/
+		= f.text_field :location_city
+		= f.text_field :location_state
+
+	%p
+		Company
+		%br/
+		= f.text_field :company
+
+	%p
+		Education (school)
+		%br/
+		= f.text_field :school
+
+	%p
+		Education (graduation year)
+		%br/
+		= f.text_field :graduation_year
+
+	%p
+		Education (major)
+		%br/
+		= f.text_field :major
+
+	%p
+		Associations
+		%br/
+		= f.text_area :groups
+
+	%p
+		Interests
+		%br/
+		= f.text_area :interests
+
+	%p
+		Hometown (city/state)
+		%br/
+		= f.text_field :hometown_city
+		= f.text_field :hometown_state
+
+	%p
+		= f.label :industry
+		%br/
+		= select(:user, :industry, User::INDUSTRIES.collect {|i| [i, User::INDUSTRIES.index(i)]})
+
+	%p
+		= f.label :industry_interested_1
+		%br/
+		= select(:user, :industry_interested_1, User::INDUSTRIES.collect {|i| [i, User::INDUSTRIES.index(i)]})
+
+	%p
+		= f.label :industry_interested_2
+		%br/
+		= select(:user, :industry_interested_2, User::INDUSTRIES.collect {|i| [i, User::INDUSTRIES.index(i)]})
+
+	%p
+		= f.label :industry_interested_3
+		%br/
+		= select(:user, :industry_interested_3, User::INDUSTRIES.collect {|i| [i, User::INDUSTRIES.index(i)]})
+
+	%p= f.submit "Save"
+
+= link_to "Back", :back

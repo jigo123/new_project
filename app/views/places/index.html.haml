@@ -1,0 +1,37 @@
+%h1 Listing places
+
+%table
+  %tr
+    %th Name
+    %th Address
+    %th City
+    %th State
+    %th Country
+    %th Phone
+    %th Href
+    %th Postcode
+    %th Owner
+    %th Uuid
+    %th
+    %th
+    %th
+
+  - @places.each do |place|
+    %tr
+      %td= place.name
+      %td= place.address
+      %td= place.city
+      %td= place.state
+      %td= place.country
+      %td= place.phone
+      %td= place.href
+      %td= place.postcode
+      %td= place.owner
+      %td= place.uuid
+      %td= link_to 'Show', place
+      %td= link_to 'Edit', edit_place_path(place)
+      %td= link_to 'Destroy', place, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Place', new_place_path

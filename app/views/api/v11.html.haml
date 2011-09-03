@@ -1,0 +1,233 @@
+%h1 Mobile API v.1.1
+
+%p This is the documentation for version 1.1 of the mobile API.
+
+%p Call it as /api/v11/:action(:id). It returns json files with the appropriate data. 
+
+%p The API supports the following actions:
+
+%table{:border => "1"}
+	%thead
+		%td Title
+		%td Action
+		%td URL
+		%td Type
+		%td Description
+	%tbody
+		
+		-# log in
+		%tr 
+			%td
+				%strong Log in
+			%td
+				\/login
+			%td 
+				%a{:href => "/api/v11/login?email=test@test.com&password=testtest1"}
+					\Success 
+				or 
+				%a{:href => "/api/v11/login"}
+					\failure 
+			%td Post 
+			%td A valid email/password returns the user record. An invalid combination returns a "user not found" error message
+
+		- ################ Places ################ 
+		-# get a list of places
+		%tr 
+			%td
+				%strong Nearby places
+			%td
+				\/places
+			%td 
+				%a{:href => "/api/v11/places?email=test@test.com&password=testtest1&lat=40.728601&lng=-73.991972"}
+					\/api/v11/places
+			%td Get 
+			%td Pass in a lat/lng and get a list of places nearby
+		
+		-# get info on a place based on it's id
+		%tr 
+			%td
+				%strong Place detail
+			%td 
+				\/place/:id
+			%td
+				%a{:href => "/api/v11/place/1?email=wrong@email.com&password=wrong_password"}
+					Invalid user
+				or
+				%a{:href => "/api/v11/place/0?email=test@test.com&password=testtest1"}
+					Invalid place
+				or
+				%a{:href => "/api/v11/place/1?email=test@test.com&password=testtest1"}
+					Valid
+			%td Get
+			%td Returns information on a place based on its id
+		
+		-# Create a new place
+		%tr 
+			%td
+				%strong Create place
+			%td 
+				\/place
+			%td
+				%a{:href => "/api/v11/place?email=wrong@email.com&password=wrong_password"}
+					Invalid user
+				or
+				%a{:href => "/api/v11/place?email=test@test.com&password=testtest1&name=My+place&lat=40.728601&lng=-73.991972"}
+					Valid creation
+			%td Post
+			%td Include a name and the lat/lng for a place and it'll create the place, save it and return a copy of it to you
+		
+		-# check into a place based on it's id
+		%tr 
+			%td 
+				%strong Checkin (place)
+			%td 
+				\/place/:id/checkin
+			%td
+				%a{:href => "/api/v11/place/0/checkin?email=wrong@email.com&password=wrong_password"}
+					Invalid user
+				or
+				%a{:href => "/api/v11/place/0/checkin?email=test@test.com&password=testtest1"}
+					Invalid place
+				or
+				%a{:href => "/api/v11/place/1/checkin?email=test@test.com&password=testtest1"}
+					Valid
+			%td Post
+			%td Check in to a place using its id and get back a list of matches for the place
+		
+		-# get a list of matches from a place based on it's id
+		%tr 
+			%td 
+				%strong Matches (place)
+			%td 
+				\/place/:id/matches
+			%td
+				%a{:href => "/api/v11/place/0/matches?email=wrong@email.com&password=wrong_password"}
+					Invalid user
+				or
+				%a{:href => "/api/v11/place/0/matches?email=test@test.com&password=testtest1"}
+					Invalid place
+				or
+				%a{:href => "/api/v11/place/1/matches?email=test@test.com&password=testtest1"}
+					Valid
+			%td Get
+			%td Ask for matches at a place and get a list of users matching your criteria (and non matching users checked into the place)
+		
+		-# check a user out of a place based on the place id
+		%tr 
+			%td 
+				%strong Check out (place)
+				%td 
+					\/place/:id/checkout
+			%td
+				%a{:href => "/api/v11/place/1/checkout?email=wrong@email.com&password=wrong_password"}
+					Invalid user
+				or
+				%a{:href => "/api/v11/place/0/checkout?email=test@test.com&password=testtest1"}
+					invalid location
+				or
+				%a{:href => "/api/v11/place/1/checkout?email=test@test.com&password=testtest1"}
+					Valid
+			%td Post
+			%td Check out of a place based on the place id and you will be checked out and get a success message
+
+		- ################ Events ################ 
+		-# get a list of events
+		%tr 
+			%td
+				%strong Nearby events
+			%td
+				\/events
+			%td 
+				%a{:href => "/api/v11/events?email=test@test.com&password=testtest1&lat=40.728601&lng=-73.991972"}
+					\/api/v11/events
+			%td Get 
+			%td Pass in a lat/lng and get a list of events nearby
+		
+		-# get info on an event based on it's id
+		%tr 
+			%td
+				%strong Event detail
+			%td 
+				\/event/:id
+			%td
+				%a{:href => "/api/v11/event/1?email=wrong@email.com&password=wrong_password"}
+					Invalid user
+				or
+				%a{:href => "/api/v11/event/0?email=test@test.com&password=testtest1"}
+					Invalid event
+				or
+				%a{:href => "/api/v11/event/1?email=test@test.com&password=testtest1"}
+					Valid
+			%td Get
+			%td Returns information on a place based on its id
+		
+		-# Create a new event
+		%tr 
+			%td
+				%strong Create event
+			%td 
+				\/event
+			%td
+				%a{:href => "/api/v11/event?email=wrong@email.com&password=wrong_password"}
+					Invalid user
+				or
+				%a{:href => "/api/v11/event?email=test@test.com&password=testtest1&name=My+event&place_id=1"}
+					Valid creation
+			%td Post
+			%td Include a name and the place id for an event and it'll create the event, save it and return a copy of it to you
+
+		-# check into an event based on it's id
+		%tr 
+			%td 
+				%strong Checkin (event)
+			%td 
+				\/event/:id/checkin
+			%td
+				%a{:href => "/api/v11/event/0/checkin?email=wrong@email.com&password=wrong_password"}
+					Invalid user
+				or
+				%a{:href => "/api/v11/event/0/checkin?email=test@test.com&password=testtest1"}
+					Invalid event
+				or
+				%a{:href => "/api/v11/event/1/checkin?email=test@test.com&password=testtest1"}
+					Valid
+			%td Post
+			%td Check in to an event using its id and get back a list of matches for the event
+		
+		-# get a list of matches from an event based on it's id
+		%tr 
+			%td 
+				%strong Matches (event)
+			%td 
+				\/event/:id/matches
+			%td
+				%a{:href => "/api/v11/event/0/matches?email=wrong@email.com&password=wrong_password"}
+					Invalid user
+				or
+				%a{:href => "/api/v11/event/0/matches?email=test@test.com&password=testtest1"}
+					Invalid place
+				or
+				%a{:href => "/api/v11/event/1/matches?email=test@test.com&password=testtest1"}
+					Valid
+			%td Get
+			%td Ask for matches at an event and get a list of users matching your criteria (and non matching users checked into the event)
+
+		-# check a user out of an event based on the place id
+		%tr 
+			%td 
+				%strong Check out (event)
+				%td 
+					\/event/:id/checkout
+			%td
+				%a{:href => "/api/v11/event/1/checkout?email=wrong@email.com&password=wrong_password"}
+					Invalid user
+				or
+				%a{:href => "/api/v11/event/0/checkout?email=test@test.com&password=testtest1"}
+					invalid location
+				or
+				%a{:href => "/api/v11/event/1/checkout?email=test@test.com&password=testtest1"}
+					Valid
+			%td Post
+			%td Check out of an event based on the event id and you will be checked out and get a success message
+
+

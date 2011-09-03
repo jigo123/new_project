@@ -1,0 +1,17 @@
+<div class="login-form"> 
+<%= form_for("user", :url => user_session_path) do |f| %>
+	<div class="text-field-name">Email:</div> 
+	<div class="text-field"><%= f.text_field :email%></div> 
+	<div class="text-field-name">Password:</div> 
+	<div class="text-field"><%= f.password_field :password%></div> 
+	<div class="log-in-button"><input type="image" src="/images/template/login.png" border="0" alt="Submit Form" /></div> 
+<% end %>
+</div> 
+<div class="navigation"> 
+	<ul id="MenuBar1" class="MenuBarHorizontal"> 
+		<li><a href="/">home</a></li> 
+		<li><a href="/content/app-features">app features</a></li> 
+		<li><%= link_to 'sign up', root_path %></li> 
+	</ul> 
+</div> 
+

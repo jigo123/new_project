@@ -1,0 +1,6 @@
+<%= raw ({:title => @place.name, :id => @place.id, :address => "#{@place.address} \n #{@place.city}, #{@place.state} \n"}).to_json %>
+<% eventlist = [] 
+  @place.events.each do |e|
+  eventlist << {:name => e.name, :id => e.id}
+ end %>
+<%= raw eventlist.to_json %>

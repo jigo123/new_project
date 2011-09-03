@@ -1,0 +1,67 @@
+<style type="text/css">
+	.content{
+		height:420px;	
+}	
+</style>
+<div class="column1"><img src="/images/template/iphone-placeholder.png" alt="palceholder-image" width="228" height="420" /></div> 
+  <div class="column2"> 
+    <ul> 
+      <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed faucibus. Nam a felis et eros condimentum placerat. </li> 
+      <li>Integer non ante quis diam luctus suscipit. Maecenas mi mauris, ullamcorper ut, ullamcorper sit amet, elementum sed, purus.</li> 
+      <li>Pellentesque lobortis, nibh sit amet tristique fringilla, sem velit ultricies turpis, nec cursus sapien nibh at neque.</li> 
+    </ul> 
+    <div class="appstore-button"><a href="#"><img src="/images/template/appstore-button.png" alt="" width="159" height="52" /></a></div> 
+    <div class="android-button"><a href="#"><img src="/images/template/android-button.png" alt="" width="161" height="51" /></a></div> 
+  </div> 
+  <div class="column3"> 
+    <div class="signup-form-container"> 
+      <h1>sign <span class="subhead">up</span></h1> 
+      <div class="line"></div> 
+			<%= form_for("user", :url => user_registration_path, :html => {:class => "signup-form"}) do |f| %>
+        <div class="text-field-name">First Name:</div> 
+        <div class="text-field"> 
+					<%= f.text_field :first_name %>
+        </div> 
+        <div class="text-field-name">Last Name:</div> 
+        <div class="text-field"> 
+					<%= f.text_field :last_name %>
+        </div> 
+        <div class="text-field-name">Email:</div> 
+        <div class="text-field"> 
+					<%= f.text_field :email %>
+        </div> 
+        <div class="text-field-name">Username:</div> 
+        <div class="text-field"> 
+					<%= f.text_field :username %>
+        </div> 
+        <div class="text-field-name">Password:</div> 
+        <div class="text-field"> 
+          <%= f.password_field :password %>
+        </div> 
+        <div class="text-field-name">Confirm Password:</div> 
+        <div class="text-field"> 
+          <%= f.password_field :password_confirmation %>
+        </div> 
+
+        <div class="text-field-name">I accept the terms and conditions</div> 
+        <div class="text-field"> 
+          <%= f.check_box :terms %>
+        </div> <br clear="all" />
+
+        <div class="text-field-name">Subscribe to announcements</div> 
+        <div class="text-field"> 
+          <%= f.check_box :subscribe_to_announcements %>
+        </div> <br clear="all" />
+
+        <div class="text-field-name">Subscribe to events</div> 
+        <div class="text-field"> 
+          <%= f.check_box :subscribe_to_events %>
+        </div>
+        <div class="signup-button"> 
+          <input type="image" src="images/template/signup.png" value="sign up" /> 
+        </div> 
+			<% end %>
+    </div> 
+  </div><!-- InstanceEndEditable --> 
+</div>
+	

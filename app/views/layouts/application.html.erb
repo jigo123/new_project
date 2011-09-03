@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<title>herematch</title> 
+	<link rel="shortcut icon" type="image/x-icon" href="/images/template/favicon.ico">	
+	<%= stylesheet_link_tag :all %>
+	<%= javascript_include_tag :defaults %>
+	<%= csrf_meta_tag %>
+</head> 
+
+<body> 
+<div class="background-gradient"> 
+	<div class="header"> 
+		<div class="logo"><a href="/"><img src="/images/template/herematch-logo.png" alt="Here Match" width="341" height="94" /></a></div>
+		<% if user_signed_in? %>
+			<%= render "layouts/topbar_logged_in" %>
+		<% else %>
+			<%= render "layouts/topbar_visitor" %>
+		<% end %>
+	</div> 
+
+	<div class="line"></div> 
+
+	<div class="content">
+	
+		<%= alert %>
+
+		<%= yield %>
+
+	</div> 
+</div> 
+
+<div class="footer"> 
+	<%= render "layouts/footer"%>
+</div> 
+
+<script type="text/javascript"> 
+var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"/images/spry/SpryMenuBarDownHover.gif", imgRight:"/images/spry/SpryMenuBarRightHover.gif"});
+</script> 
+</body> 
+</html>

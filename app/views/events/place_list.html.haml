@@ -1,0 +1,25 @@
+%h1 Add Event
+
+%p
+	Address:
+	%br/
+	=@location.address
+	%br/
+	=@location.city + ', ' + @location.state + ' ' + @location.zip
+	%br/
+
+%h2 Places
+
+%p 
+	If your event is in one of the following venues, add it to the venue. Otherwise, click here to 
+	=link_to "add a place", "#{quick_add_place_path()}?place[address]=#{@location.address}&place[city]=#{@location.city}&place[state]=#{@location.state}&place[postcode]=#{@location.zip}"
+
+
+
+%ul
+	- for place in @places
+		%li 
+			#{place.name}, #{place.category_name} #{place.address}.
+			=link_to "Add event here", "/events/new?place_id=#{place.id}"
+	
+

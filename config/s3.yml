@@ -1,0 +1,14 @@
+development:
+  bucket: tap-dev
+  access_key_id: AKIAIZOMH3IZ5Z7IFNXQ
+  secret_access_key: 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
+
+test:
+  bucket: tap-test
+  access_key_id: AKIAIZOMH3IZ5Z7IFNXQ
+  secret_access_key: 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
+
+production:
+  bucket: tap-production
+  access_key_id: AKIAIZOMH3IZ5Z7IFNXQ
+  secret_access_key: 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

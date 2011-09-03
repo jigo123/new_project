@@ -1,0 +1,39 @@
+= form_for @place do |f|
+	-if @place.errors.any?
+		#error_explanation
+		%h2= "#{pluralize(@place.errors.count, "error")} prohibited this place from being saved:"
+		%ul
+			- @place.errors.full_messages.each do |msg|
+				%li= msg
+
+	.field
+		= f.label :name
+		= f.text_field :name
+
+	.field
+		= f.label :category
+		= select(:place, :category, Place::CATEGORIES.collect {|i| [i, Place::CATEGORIES.index(i)]})
+	
+	.field
+		= f.label :phone
+		= f.text_field :phone
+	
+	.field
+		= f.label :href
+		= f.text_field :href
+	
+	.field
+		= f.hidden_field :address
+
+	.field
+		= f.hidden_field :city
+
+	.field
+		= f.hidden_field :state
+
+	.field
+		= f.hidden_field :postcode
+
+	
+	.actions
+		= f.submit 'Save'

@@ -1,0 +1,38 @@
+%h1 Location
+
+%p
+	Address:
+	%br/
+	=@location.address + @location.address_2 
+	%br/
+	=@location.city + ', ' + @location.state + ' ' + @location.zip
+	%br/
+	Latlng:
+	=@location.lat 
+	=@location.lng
+
+%h2 Places
+
+%p=link_to "Add a place", new_place_path()
+
+%p
+	Number of places
+	= @places.length		
+%ul
+	- for place in @places
+		%li 
+			#{place.name}, #{place.category_name} #{place.address}. #{place.distance_away}
+			=link_to "Check in", checkin_path(place)
+			=link_to "View", place_path(place)
+	
+%h2 Events
+%p
+	Number of events
+	= @events.length		
+%ul
+	- for event in @events
+		%li 
+			#{event.name} #{event.category_name} #{event.distance_away}
+			=link_to "Check in", event_checkin_path(event)
+			=link_to "View", event_path(event)
+

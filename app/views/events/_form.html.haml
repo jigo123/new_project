@@ -1,0 +1,59 @@
+= form_for (@event, :html => { :multipart => true }) do |f|
+
+	-if @event.errors.any?
+		#error_explanation
+			%h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
+			%ul
+				- @event.errors.full_messages.each do |msg|
+					%li= msg
+
+	.field
+		= f.hidden_field :place_id, :value => params[:place_id]
+	
+	.field
+		= f.label :name
+		= f.text_field :name
+	
+	.field
+		= f.label :start
+		= f.datetime_select :start
+	
+	.field
+		= f.label :end
+		= f.datetime_select :end
+	
+	.field
+		= f.label :category
+		= select(:event, :category, Event::CATEGORIES.collect {|i| [i, Event::CATEGORIES.index(i)]})
+
+	.field
+		= f.label :logo
+		%br/
+		- if @event.logo_file_name
+			= image_tag @event.logo.url, :width => "100"
+			%br/
+		= f.file_field :logo
+
+	.field
+		= f.label :url
+		= f.text_field :url
+
+	.field
+		= f.label :phone
+		= f.text_field :phone
+
+	.field
+		= f.label :email
+		= f.text_field :email
+
+	.field
+		= f.label :description
+		= f.text_area :description
+
+	.field
+		= f.check_box :organizer
+		Are you the organizer?
+
+	.actions
+		= f.submit 'Save'
+		

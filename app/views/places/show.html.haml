@@ -1,0 +1,47 @@
+%h1 Place
+
+%p#notice= notice
+	
+%p
+	%b Name:
+	= @place.name
+%p
+	%b Address:
+	= @place.address
+
+%h2 
+	Checked in users 
+	= "(#{@place.users.count} users)"
+
+- if (@place.users.include? current_user)
+	%p
+		%b 
+			you are checked in
+			= link_to 'Check out', checkout_path(:id => @place)
+- else
+	%p
+		%b you are NOT checked in
+		= link_to 'Check in', checkin_path(:id => @place)
+
+- for user in @place.users
+	%li= user.name 
+
+- if (@place.users.include? current_user)
+	%h2 Matching users
+
+- for user in @place.matches(current_user)
+	%li #{user.name} (#{user.match_reasons})
+
+%h2 Events
+
+- if !@place.events.empty?
+	There are #{@place.events.length} events scheduled at #{@place.name}
+	%ul
+	- for event in @place.events
+		%li= link_to event.name, event_path(:id => event)
+
+- else
+	%p There are no events scheduled at this place
+
+%p= link_to 'Add an event', new_event_path(:place_id => @place)
+ 

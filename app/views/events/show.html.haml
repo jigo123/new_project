@@ -1,0 +1,70 @@
+%h1 Event
+
+%p#notice= notice
+	
+%p
+	%b Name:
+	= @event.name
+
+%p
+	%b Location:
+	= @place.name
+
+%p
+	%b Address:
+	= @place.address
+
+%p
+	%b Category:
+	= @event.category_name
+
+- if @event.logo_file_name
+	%p
+		%b Logo:
+		= image_tag @event.logo.url, :width => "100"
+
+%p
+	%b URL:
+	= @event.url
+
+%p
+	%b Phone:
+	= @event.phone
+
+%p
+	%b Email:
+	= @event.email
+
+%p
+	%b Description:
+	= @event.description
+
+%p
+	%b Producer Name:
+	= @event.producer_name
+
+
+%h2 
+	Checked in users 
+	= "(#{@event.users.count} users)"
+
+- if (@event.users.include? current_user)
+	%p
+		%b 
+			you are checked in
+			= link_to 'Check out', event_checkout_path(@event)
+- else
+	%p
+		%b you are NOT checked in
+		= link_to 'Check in', event_checkin_path(@event)
+
+- for user in @event.users
+	%li= user.name 
+
+- if (@event.users.include? current_user)
+	%h2 Matching users
+
+	- for user in @event.matches(current_user)
+		%li #{user.name} (#{user.match_reasons})
+
+

@@ -1,0 +1,523 @@
+@charset "UTF-8";
+
+body {
+	background:#dbd9d9;
+	font-family:Tahoma, Geneva, sans-serif;
+	padding:0;
+	margin:0;
+	min-width:940px;
+}
+
+div{
+	margin:0;
+	padding:0;	
+}
+
+a{
+	color:#185f8d;
+}
+
+.background-gradient{
+	background:url(images/template/bg-gradient.jpg) repeat-x #cccccc;
+	margin:0;
+	padding:0;	
+}
+
+.container{
+	width:940px;
+	margin:0 auto 0 auto;
+}
+
+/********************************************/
+/********************Header******************/
+/********************************************/
+
+.header{
+	height:121px;
+	width:940px;
+	margin:0 auto 0 auto;
+	position:relative;
+}
+
+.line{
+	border-top:1px solid #c3c3c3;
+	height:1px;	
+	clear:both;
+}
+
+.logo {
+	top:22px;
+	position:absolute;
+}
+
+.greeting{
+	font-size:12px;
+	position:absolute;
+	top:10px;
+	right:0;
+}
+
+.logo a img {
+	border:none;
+}
+
+.login-form{
+	font-size:12px;
+	position:absolute;
+	top:10px;
+	left:450px;
+}
+
+.login-form .text-field-name{
+	width:auto;
+	margin:10px 12px 0 12px;
+	padding:0 0 0 0;
+	text-align:right;
+	float:left;
+}
+
+.login-form .text-field{
+	float:left;	
+	width:146px;
+	margin:4px 0 4px 0;
+	padding:0;
+}
+
+.login-form .text-field input{
+	width:100%;
+	border:1px solid #3399cc;
+	height:25px;	
+}
+
+.login-form .log-in-button{
+	margin:4px 0 0 10px;
+	width:52px;
+	height:28px;
+	float:left;	
+}
+
+/********************************************/
+/******************Navigation****************/
+/********************************************/
+
+.navigation{
+	position:absolute;
+	right:0;
+	top:55px;
+}
+
+/********************************************/
+/**********************ADS*******************/
+/********************************************/
+
+.ads{
+	float:right;
+	margin:0 0 0 20px;
+}
+
+
+/********************************************/
+/********************Forms*******************/
+/********************************************/
+
+form.new_place{
+	width:600px;
+	font-size:12px;
+}
+
+form.new_place .field {
+	margin:0;
+	padding:10px 0 10px 0;
+	display:block;
+	height:20px;
+}
+
+form.new_place .field label{
+	display:block;
+	width:100px;
+	float:left;	
+	clear:left;
+	text-align:right;
+	margin:0 10px 0 0;
+}
+
+form.new_place .field input, form.new_place .field select {
+	display:block;
+	float:left;	
+	
+}
+
+form.new_place .field input {
+	display:block;
+	float:left;	
+	width:250px;	
+}
+
+
+form.new_place .field input.state{
+	width:2em;	
+}
+
+form.new_place .field input.zip{
+	width:6em;	
+}
+
+form.new_place .field input.phone{
+	width:12em;	
+}
+
+form.new_place .hr{
+	margin:10px 0 10px 0;	
+}
+
+form.new_place .actions{
+	clear:left;	
+	margin:0 0 0 110px;
+}
+
+/*********************************/
+
+form.add-events{
+	width:600px;
+	font-size:12px;
+}
+
+form.add-events .field {
+	margin:0;
+	padding:10px 0 10px 0;
+	display:block;
+	height:20px;
+}
+
+form.add-events .field label{
+	display:block;
+	width:100px;
+	float:left;	
+	clear:left;
+	text-align:right;
+	margin:0 10px 0 0;
+}
+
+form.add-events .field input, form.add-events .field select {
+	display:block;
+	float:left;		
+}
+
+form.add-events .field input{
+	width:250px;	
+}
+
+form.add-events .field input.state{
+	width:2em;	
+}
+
+form.add-events .field input.zip{
+	width:6em;	
+}
+
+
+form.add-events .hr{
+	margin:10px 0 10px 0;	
+}
+
+form.add-events .actions{
+	clear:left;	
+	margin:0 0 0 110px;
+}
+
+/*********************************/
+
+form.new_event{
+	width:600px;
+	font-size:12px;
+}
+
+form.new_event .field {
+	margin:0;
+	padding:10px 0 10px 0;
+	display:block;
+	height:20px;
+}
+
+form.new_event .field label{
+	display:block;
+	width:100px;
+	float:left;	
+	clear:left;
+	text-align:right;
+	margin:0 10px 0 0;
+}
+
+form.new_event .field input, form.new_events .field select {
+	display:block;
+	float:left;		
+}
+
+form.new_event .field input{
+	width:250px;	
+}
+
+form.new_event .area label{
+	display:block;	
+	float:left;	
+	width:100px;
+	text-align:right;
+	margin:0 10px 0 0;
+	
+}
+
+form.new_event .area textarea {
+	display:block;	
+	float:left;
+	width:250px;
+}
+
+form.new_event .field input.state{
+	width:2em;	
+}
+
+form.new_event .field input.zip{
+	width:6em;	
+}
+
+
+form.new_event .hr{
+	margin:10px 0 10px 0;	
+}
+
+form.new_event .actions{
+	clear:left;	
+	margin:0 0 0 110px;
+}
+
+
+
+
+/*********************************/
+
+form.find-events{
+	width:600px;
+	font-size:12px;
+}
+
+form.find-events .field {
+	margin:0;
+	padding:10px 0 10px 0;
+	display:block;
+	height:20px;
+}
+
+form.find-events .field label{
+	display:block;
+	width:100px;
+	float:left;	
+	clear:left;
+	text-align:right;
+	margin:0 10px 0 0;
+}
+
+form.find-events .field input, form.find-events .field select {
+	display:block;
+	float:left;		
+}
+
+form.find-events .field input{
+	width:250px;	
+}
+
+form.find-events .field input.state{
+	width:2em;	
+}
+
+form.find-events .field input.zip{
+	width:6em;	
+}
+
+form.find-events .actions{
+	clear:left;	
+	margin:0 0 0 110px;
+}
+
+form.find-events .hr{
+	margin:10px 0 10px 0;	
+}
+
+/********************************************/
+/*******************Content******************/
+/********************************************/
+.content{
+	min-height:420px;	
+	width:940px;
+	margin:0 auto 0 auto;
+	padding:30px 0 30px 0;
+	font-family:Verdana, Geneva, sans-serif;
+	line-height:145%;
+}
+
+h1{
+	color:#2582bf;	
+	margin:0 0 35px 0;
+	padding:0;
+}
+
+.subhead{
+	color:#185f8d;	
+}
+
+.smalltext{
+	font-size:12px;
+	color:#000;
+	display:block;
+	font-weight:normal;
+}
+
+ul li, ol li{
+	margin:10px 0 10px 0;	
+}
+
+.content a:hover{
+	text-decoration:none;
+	color:#000;	
+}
+
+.hr{
+	border-top:1px solid #000;	
+	height:1px;
+	display:block;
+	filter:alpha(opacity=20);
+ 	-moz-opacity:0.2;
+ 	-khtml-opacity: 0.2;
+	 opacity: 0.2;
+	 clear:left;
+}
+
+p.subhead{
+	font-size:125%;
+	font-weight:bold;
+}
+
+.content strong{
+	color:#2582bf;		
+}
+
+
+/********************************************/
+/*********************Index******************/
+/********************************************/
+.column1, .column2, .column3{
+	float:left;
+}
+
+.column1{
+	width:230px;
+	margin:0 10px 0 0;
+}
+
+.column2, .column3{
+	width:340px;
+}
+
+.column2{
+	margin:0 20px 0 0;	
+	line-height:30px;
+	font-weight:14px;
+}
+
+.column2 ul{
+	margin:0 0 0 0;
+	padding:0;
+}
+
+.column2 ul li{
+	margin:0 0 0 15px;
+	padding:0;
+}
+
+.signup-form-container h1{
+	color:#2582bf;	
+	margin:0;
+	padding:0;
+}
+
+.signup-form-container .tagline{
+	margin:0 0 0 0;
+	padding:0 0 0;
+}
+
+.signup-form-container .line{
+	margin:15px 0 15px 0;	
+}
+
+.signup-form{
+	font-size:12px;
+}
+
+.signup-form .text-field-name{
+	width:120px;
+	margin:10px 15px 0 0;
+	padding:0 0 0 0;
+	text-align:right;
+	float:left;
+}
+
+.signup-form .text-field{
+	float:left;	
+	width:205px;
+	margin:4px 0 4px 0;
+	padding:0;
+}
+
+.signup-form .text-field input{
+	width:100%;
+	border:1px solid #3399cc;
+	height:25px;	
+}
+
+.signup-button{
+	float:right;
+	padding:15px 0 0 0;	
+}
+
+
+.android-button{
+	float:left;
+}
+
+.appstore-button{
+	float:left;
+	margin:0 20px 0 0;
+}
+
+.android-button a img, .appstore-button a img{
+	border:none;
+}
+
+/********************************************/
+/********************Footer******************/
+/********************************************/
+.footer{
+	font-size:10px;
+	color:#666666;
+	padding:25px 0 0 0;
+	width:940px;
+	margin:0 auto 0 auto;
+}
+
+.text-links{
+	color:#185f8d;
+}	
+
+.credit{
+	width:50%;
+}
+
+.copyright{
+	width:50%;
+	margin:25px 0 0 0;
+}
+
+.copy{
+	width:50%;
+	float:right;
+	display: none;
+}

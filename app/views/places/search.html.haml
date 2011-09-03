@@ -1,0 +1,24 @@
+%h1
+	find 
+	%span.subhead events
+
+= form_tag('/places/searchresults', :class =>"find-events") do
+
+	.field
+		= label_tag :address
+		= text_field_tag :address
+
+	.field
+		= label_tag :city
+		= text_field_tag :city
+
+	.field
+		= label_tag :state
+		= text_field_tag :state, nil, :class => "state"
+
+	.field
+		= label_tag :zip
+		= text_field_tag :zip, nil, :class => "zip"
+
+	%div.hr
+	%div.actions= image_submit_tag "/images/template/find-events.png", :name =>"commit", :value => "Find Events"

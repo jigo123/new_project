@@ -1,0 +1,8 @@
+<% matchlist = [] 
+  @matches.each do |m|
+  matchlist << {:name => m.name, :id => m.id, :details => 'some details', :photo_url => m.photo.url, :company => m.company, :title => m.title, :matched_note => m.first_match_reason}
+ end %>
+<%= raw matchlist.to_json %>
+
+<%# HAML %>
+<%# = raw( {:matches => [@matches]}.to_json) %>
